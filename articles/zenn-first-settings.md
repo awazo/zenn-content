@@ -21,7 +21,7 @@ zenn 楽しそう。とりあえず github と連携させてみておいて、�
 * [github: Creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token#using-a-token-on-the-command-line)
 * [zenn: Zenn CLIで記事・本を管理する方法](https://zenn.dev/zenn/articles/zenn-cli-guide)
 
-### github にリポジトリ新規作成
+## github にリポジトリ新規作成
 
 リポジトリ名っていつも困る。
 とりあえず zenn-written とかにしてみたけど、そういえば複数のarticleやらbookやらを作成するとなると、リポジトリってどうなるんだろ。複数のリポジトリ？　単一のリポジトリで複数記事を管理できるのかな。
@@ -33,13 +33,13 @@ clone しておいた。まだリポジトリの中身は空。README も LICENS
 
 zenn と github リポジトリの連携については公式ドキュメント通りで、すんなり完了した。たぶん [「2. ダッシュボードから連携する」の手順](https://zenn.dev/zenn/articles/connect-to-github#2.-%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%81%8B%E3%82%89%E9%80%A3%E6%90%BA%E3%81%99%E3%82%8B) で All repositories ではなく Only select repositories を選ぶ必要があるところが、いちばん間違えそうなので、公式ドキュメントにもちゃんと書いてある。ありがとう公式さん。
 
-### nodejs をインストールして zenn 用リポジトリを初期化
+## nodejs をインストールして zenn 用リポジトリを初期化
 
 [nodejs 公式サイトのダウンロードページ](https://nodejs.org/ja/download/) から、手元の環境が windows なので、Windows Binary (.zip) の 64-bit 版をダウンロード。
 [ドキュメント](https://zenn.dev/zenn/articles/install-zenn-cli#0.-%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99) によると v15 は現時点（私が試したのは 2021-01-20）ではうまく動かないから、v13 か v14 を使ってねとのこと。LTS 版が v14.15.4 だったのでダウンロードして展開した。
 いつも `C:\bin\` フォルダを作成しているので、そこに置いて PATH 環境変数を設定した。
 
-#### `npm init --yes` とか `npm install zenn-cli` とか（1回目）
+### `npm init --yes` とか `npm install zenn-cli` とか（1回目）
 
 ところが `npm init --yes` で package.json がリポジトリ内ではなく nodejs をインストールしたフォルダに作成されたり、`npm install zenn-cli` がエラーで中断される。
 nodejs をインストールしたフォルダには zenn とか zenn.cmd とか zenn.ps1 とかいうファイルまで作成されて、これは何かとってもおかしいな、という気がしてくる。
@@ -48,7 +48,7 @@ nodejs をインストールしたフォルダには zenn とか zenn.cmd とか
 
 こりゃダメそうだ、となったけど、ちゃんと原因を調べるのは zenn で記事を書けるようにする目的からすると脇道なので、そっちに行くのはやめておく。そういうことするなら、[zenn-editor](https://github.com/zenn-dev/zenn-editor) にパッチを送る方が良いだろうしね、記事にするより。
 
-#### nodejs のひとつ前の LTS 版 v12.20.1 をインストール
+### nodejs のひとつ前の LTS 版 v12.20.1 をインストール
 
 で、結局は nodejs のバージョンを下げた。
 
@@ -57,13 +57,13 @@ v14 でのエラーについては、`node --version` でバージョン確認�
 
 nodejs の古いバージョンは、ダウンロードページの下の方にある [バージョンの一覧](https://nodejs.org/ja/download/releases/) から、ひとつ前の LTS 版 v12.20.1 にした。node-v12.20.1-win-x64.zip をダウンロード、展開、配置。LTS 版は偶数バージョンなのかな。
 
-#### `npm init --yes` とか `npm install zenn-cli` とか（2回目）
+### `npm init --yes` とか `npm install zenn-cli` とか（2回目）
 
 こんどはうまくいっている様子。package.json もリポジトリのフォルダ内にできるし、zenn-cli のインストールも完走した。
 
 ドキュメントに従って、`npx zenn init` もうまくいき、`npx zenn preview` でうまくブラウザからプレビューも見れた。うれしい。
 
-### github の personal access token を作成
+## github の personal access token を作成
 
 さて、初期化が済んだようなので、ここでひとまず git に commit 作っておこう。そして github に push だ。
 
@@ -78,7 +78,7 @@ push できなかった。Authentication failed とのことだけど、いや�
 
 GitBash から `git push -u origin main` すると、まず github へのログインダイアログが出るので、ここはトークンではなく、いつものログインの ID とパスワードを入れて、そのあとコンソールで ID を要求されるのでこれは github の ID を入れる。そのあとにパスワードを入れるダイアログが出るので、ここでメモったトークンを入れると、push できた。やれやれ。
 
-### `npx zenn new:article --slug zenn-first-settings` でこの記事を作成
+## `npx zenn new:article --slug zenn-first-settings` でこの記事を作成
 
 実は slug がなんのことか知らなかったので、web 検索してナメクジの画像をいっぱい見た。うわあ。
 英単語としてはナメクジとか、のろのろした人とか、怠け者とか、そういうイメージらしい。銃弾、偽金、パンチ、とかでもあるらしい。なんかあんまり意味が一定しないな。活字で空白に使うやつとかも slug らしい。なんか小さい部品とか、たいして役に立たないような、あんまり意味のないものとか、そういうのを指す単語なのかな。外国語は不思議だ。
