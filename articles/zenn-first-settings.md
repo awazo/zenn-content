@@ -96,4 +96,8 @@ GitBash から `git push -u origin main` すると、まず github へのログ�
 そして今ここを書いている。つい楽しくなって長く書き過ぎた気がする。
 ところで push したときに、また personal access token を入力することになったけど、記憶できないようなトークンを何度も入力するのはつらい。と思ったら、[github: Caching your GitHub credentials in Git](https://docs.github.com/en/github/using-git/caching-your-github-credentials-in-git) があった。なるほど `git config --global credential.helper wincred` ね（windows の場合）。どうなるか試してみよう。
 
+## おわりに
+
+更新の段落を追加したときには personal access token の再入力を求められなかった。どうやらうまくいったらしい。
+これから、ぼちぼちとなんやかや書いていこう。ありがとう zenn 、よろしく zenn。
 
