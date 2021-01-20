@@ -90,3 +90,10 @@ GitBash から `git push -u origin main` すると、まず github へのログ�
 
 さて、この続きは md ファイルの冒頭に自動生成された published が今は false になっているので、これを true にして commit して push すると zenn にデプロイされるらしい。どうなるかな。To Be Continued...
 
+## 更新
+
+うまく公開できたようだけど、目次が思ったように出ていないので、見出しのレベルを調整した。
+そして今ここを書いている。つい楽しくなって長く書き過ぎた気がする。
+ところで push したときに、また personal access token を入力することになったけど、記憶できないようなトークンを何度も入力するのはつらい。と思ったら、[github: Caching your GitHub credentials in Git](https://docs.github.com/en/github/using-git/caching-your-github-credentials-in-git) があった。なるほど `git config --global credential.helper wincred` ね（windows の場合）。どうなるか試してみよう。
+
+
