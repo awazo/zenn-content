@@ -20,7 +20,7 @@ published: true
     2. `$ sudo npm install zenn-cli@latest` # いらないかも
 4. `$ npx zenn preview &`
 5. ブラウザで http://localhost:8000/ を開く
-6. あとは `$ npm zenn new:article --slug お好きに` みたいな新規記事作ったりなどする
+6. あとは `$ npx zenn new:article --slug お好きに` みたいな新規記事作ったりなどする
 
 ## ごぶさたしてます
 なんと [前に書いたもの](https://zenn.dev/awazo/articles/zenn-first-settings) から、もう 2 年が経とうとしていて、驚きでござい。
@@ -44,6 +44,6 @@ published: true
 [公式](https://zenn.dev/zenn/articles/install-zenn-cli) とか [公式](https://zenn.dev/zenn/articles/zenn-cli-guide) とかにあるものから、必要なところだけすれば良いので、`npm install zenn-cli` または `npm install zenn-cli@latest` して、前回 ( 2 年前) から更新されてないリポジトリを clone してくる。
 今度はちゃんと `npm install zenn-cli@latest` も完走して、clone したリポジトリのルートディレクトリ ( articles と books のディレクトリが入っている場所) で `npx zenn preview` することで無事にプレビューを見ることができた。
 で、`npx zenn new:article --slug zenn-with-configured-repository` して、これを書いているという次第。
-nodejs で手間取らなければ、`npm install zenn-cli` と `npx zenn preview` と `npm zenn new:article --slug xxx` だけで済んだから、こんなの書かなかったのだけれどね。
+nodejs で手間取らなければ、`npm install zenn-cli` と `npx zenn preview` と `npx zenn new:article --slug xxx` だけで済んだから、こんなの書かなかったのだけれどね。
 当初に書こうとしたものは (そのために zenn の環境を作り直したのでした) また後日にでも。
 
