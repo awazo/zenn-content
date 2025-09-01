@@ -125,7 +125,7 @@ src/handler/user.rs
 とりあえず handler ディレクトリに入れたけれど、handler ディレクトリも handler.rs も作らずに main.rs と user.rs だけでもモジュールの参照を調節したらできるはず。
 :::
 
-エンドポイントとしては、以下のように書くことになる。
+エンドポイントとしては、
 ```text: 全体
 GET /
 GET /user/
@@ -136,7 +136,7 @@ GET /usre/{id}/
 GET /
 nest /user handler::user::build_router()
 ```
-と、`/user` 以下に分けて書ける。
+と、`/user` 以下に分けて書ける、というわけだ。
 ```text: user.rs 内
 GET /
 GET /{id}/
