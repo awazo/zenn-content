@@ -175,6 +175,7 @@ async fn main() {
 
 `std::sync::Arc` を使って、非同期のエンドポイント間でも受け渡せるようにした構造体 AppState を用意し、初期化して with_state に渡す。
 分けたほうの user.rs にある Router では build_router の返すものを `Router<Arc<AppState>>` に変更する。
+こっちでは with_state はしない。
 
 ```Rust: handler/user.rs
 use std::sync::Arc;
